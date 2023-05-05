@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Form} from "react-bootstrap";
 import Location from "./Location";
+import Error from "./Error";
 import axios from "axios";
 import Map from "./Map";
 import './Main.css'
@@ -13,7 +14,8 @@ class Main extends React.Component {
       city:'',
       cityName: '',
       cityLat: '',
-      cityLon: ''
+      cityLon: '',
+      displayError: false
     }
   }
 
@@ -26,6 +28,7 @@ class Main extends React.Component {
 
   handleExplorer = async (e) => {
     e.preventDefault();
+    try{
     let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_CITY_KEY}&q=${this.state.city}&format=json`
     console.log(url);
     const response = await axios.get(url)
@@ -36,6 +39,11 @@ class Main extends React.Component {
       cityLat: response.data[0].lat,
       cityLon: response.data[0].lon
     })
+  }
+  catch{ this.setState({
+    displayError:true
+  })
+  }
   }
 
   render() {
@@ -51,10 +59,11 @@ class Main extends React.Component {
 
         {this.state.displayInfo &&
           <>
+            
+
             <Map 
             cityLat={this.state.cityLat}
             cityLon={this.state.cityLon}
-
             />
 
             <Location 
@@ -65,6 +74,14 @@ class Main extends React.Component {
             </>
 
   }
+  {this.state.displayError &&
+     <>
+        <Error 
+
+        />
+     </>
+  }
+      
       </>
     )
   }
