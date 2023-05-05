@@ -20,11 +20,22 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-Name of feature: ________________________________
+Name of feature: Displaying city lat & lon
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1.5hours
 
-Start time: _____
+Start time: 6:30pm
+
+Finish time: 8:30pm
+
+Actual time needed to complete: 2hrs
+
+
+Name of feature: Displaying Map & Style
+
+Estimate of time needed to complete:1.5Hrs
+
+Start time: 7:30pm
 
 Finish time: _____
 

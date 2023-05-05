@@ -1,0 +1,36 @@
+body{
+  background-color: lightblue;
+}
+
+.Head{
+  text-align: center;
+ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ border: 10px lightcoral solid;
+ border-radius: 20px;
+}
+.mapImg{
+  display: flex;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.cityData{
+  border: 10px solid lightcoral;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.city{
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Foot{
+  text-align: right;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
