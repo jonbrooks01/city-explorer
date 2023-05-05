@@ -37,6 +37,17 @@ Estimate of time needed to complete:1.5Hrs
 
 Start time: 7:30pm
 
-Finish time: _____
+Finish time: 9pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1.5hrs
+
+
+Name of feature: Display Error
+
+Estimate of time needed to complete:1.5Hrs
+
+Start time: 7:30pm
+
+Finish time: 9pm
+
+Actual time needed to complete: 1.5hrs
