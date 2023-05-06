@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form} from "react-bootstrap";
+import { Button, Container, Form} from "react-bootstrap";
 import Location from "./Location";
 import Error from "./Error";
 import axios from "axios";
@@ -46,6 +46,13 @@ class Main extends React.Component {
   }
   }
 
+  resetError = () => {
+    this.setState({
+      displayInfo: false,
+      displayError: false
+    }) 
+  }
+
   render() {
     return (
       <>
@@ -54,11 +61,11 @@ class Main extends React.Component {
               <Form.Label>Enter a city location for more information</Form.Label>
               <Form.Control type="text" onChange={this.handleInput} />
             </Form.Group>
-            <Button type="submit">Explore!</Button>
+            <Button type="submit" onClick={this.resetError}>Explore!</Button>
         </Form>
 
         {this.state.displayInfo &&
-          <>
+          <Container>
             
 
             <Map 
@@ -71,7 +78,7 @@ class Main extends React.Component {
             cityLat={this.state.cityLat}
             cityLon={this.state.cityLon}
             />
-            </>
+            </Container>
 
   }
   {this.state.displayError &&
