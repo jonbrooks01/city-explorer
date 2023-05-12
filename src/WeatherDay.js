@@ -13,8 +13,8 @@ class WeatherDay extends React.Component {
         className="mb-2">
         <Card.Header>{day.date}</Card.Header>
         <Card.Title>{day.description}</Card.Title>
-        <Card.Text>High Temp:{day.highTemp}, 
-        Low Temp:{day.lowTemp}</Card.Text>
+        <Card.Text>Temp:{day.temp}
+        </Card.Text>
 
         </Card>
         )}
