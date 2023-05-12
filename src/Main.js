@@ -4,6 +4,7 @@ import Location from "./Location";
 import Error from "./Error";
 import axios from "axios";
 import WeatherDay from "./WeatherDay";
+import Movie from "./Movie";
 import Map from "./Map";
 import './Main.css'
 
@@ -17,7 +18,8 @@ class Main extends React.Component {
       cityLat: '',
       cityLon: '',
       displayError: false,
-      weatherData: []
+      weatherData: [],
+      movieData: []
     }
   }
 
@@ -30,33 +32,36 @@ class Main extends React.Component {
 
   handleExplorer = async (e) => {
     e.preventDefault();
-    // try {
+    try {
       let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_CITY_KEY}&q=${this.state.city}&format=json`
       const response = await axios.get(url)
       console.log(response);
 
       const lat = response.data[0].lat
       const lon = response.data[0].lon
-      console.log(process.env.WEATHER_API_KEY)
       let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${lat}&lon=${lon}`
-      console.log(weatherUrl);
       const weatherResponse = await axios.get(weatherUrl)
+      let movieUrl = `${process.env.REACT_APP_SERVER}/movie?&film=${this.state.city}`
+      console.log(movieUrl);
+      const movieResponse = await axios.get(movieUrl)
+      console.log(movieResponse);
       console.log(response.data[0]);
       this.setState({
         displayInfo: true,
         cityName: response.data[0].display_name,
         cityLat: response.data[0].lat,
         cityLon: response.data[0].lon,
-        weatherData: weatherResponse.data
+        weatherData: weatherResponse.data,
+        movieData: movieResponse.data
       },
         () => console.log(this.state.weatherData)
       )
-    // }
-    // catch {
-    //   this.setState({
-    //     displayError: true
-    //   })
-    // }
+    }
+    catch {
+      this.setState({
+        displayError: true
+      })
+    }
   }
 
   resetError = () => {
@@ -95,6 +100,10 @@ class Main extends React.Component {
             <WeatherDay
 
               weatherData={this.state.weatherData}
+            />
+
+            <Movie 
+             movieData={this.state.movieData}
             />
           </Container>
 
