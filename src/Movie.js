@@ -8,8 +8,9 @@ class Movie extends React.Component {
 
     <div>
     {this.props.movieData.map(film =>
-      <Card>
-      <Card.Header>{film.title}</Card.Header>
+      <Card border="success" style={{width:'18rem'}}>
+      <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${film.poster}`} className="cardImg"/>
+      <Card.Title>{film.name}</Card.Title>
       <Card.Title>Released:{film.release_date}</Card.Title>
       <Card.Text>{film.overview}</Card.Text>
       </Card>     

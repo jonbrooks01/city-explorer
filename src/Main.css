@@ -16,6 +16,13 @@ body{
   padding: 20px;
 }
 
+.cardImg{
+  width: 200px;
+  display: flex;
+  align-self: right;
+  /* height: 200px; */
+}
+
 .cityData{
   border: 10px solid lightcoral;
   border-radius: 20px;
