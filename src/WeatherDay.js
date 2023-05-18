@@ -5,12 +5,13 @@ class WeatherDay extends React.Component {
   render() {
     return(
       <div>
-      {this.props.weatherData.map(day => 
+      {this.props.weatherData.map((day, idx) => 
         <Card
         bg={'info'}
         text={'dark'}
         style={{ width: '30rem' }}
-        className="mb-2">
+        className="mb-2"
+        key = {idx}>
         <Card.Header>{day.date}</Card.Header>
         <Card.Title>{day.description}</Card.Title>
         <Card.Text>Temp:{day.temp}

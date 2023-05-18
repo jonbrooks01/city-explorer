@@ -7,8 +7,8 @@ class Movie extends React.Component {
     return(
 
     <div>
-    {this.props.movieData.map(film =>
-      <Card border="success" style={{width:'18rem'}}>
+    {this.props.movieData.map((film, idx) =>
+      <Card border="success" style={{width:'18rem'}} key = {idx}>
       <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${film.poster}`} className="cardImg"/>
       <Card.Title>{film.name}</Card.Title>
       <Card.Title>Released:{film.release_date}</Card.Title>
